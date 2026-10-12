@@ -11,7 +11,15 @@ function setActiveSlide(index) {
 
 }
 
-function scrollToSlide(index) {
+function getSlideScrollLeft(card) {
+  const trackBounds = sliderTrack.getBoundingClientRect();
+  const cardBounds = card.getBoundingClientRect();
+  const centeredLeft = sliderTrack.scrollLeft + cardBounds.left - trackBounds.left
+    + cardBounds.width / 2 - sliderTrack.clientWidth / 2;
+  return Math.max(0, Math.min(centeredLeft, sliderTrack.scrollWidth - sliderTrack.clientWidth));
+}
+
+function scrollToSlide(index, immediate = false) {
   const card = sliderCards[index];
 
   if (!card || !sliderTrack) {
@@ -21,8 +29,8 @@ function scrollToSlide(index) {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   sliderTrack.scrollTo({
-    left: card.offsetLeft - sliderTrack.offsetLeft,
-    behavior: prefersReducedMotion ? "auto" : "smooth",
+    left: getSlideScrollLeft(card),
+    behavior: immediate || prefersReducedMotion ? "instant" : "smooth",
   });
 }
 
@@ -35,7 +43,7 @@ if (sliderTrack && sliderCards.length) {
     scrollFrame = requestAnimationFrame(() => {
       const activeIndex = sliderCards.reduce(
         (closest, card, index) => {
-          const distance = Math.abs(sliderTrack.scrollLeft - (card.offsetLeft - sliderTrack.offsetLeft));
+          const distance = Math.abs(sliderTrack.scrollLeft - getSlideScrollLeft(card));
           return distance < closest.distance ? { index, distance } : closest;
         },
         { index: 0, distance: Number.POSITIVE_INFINITY }
@@ -49,7 +57,9 @@ if (sliderTrack && sliderCards.length) {
     dot.addEventListener("click", () => scrollToSlide(index));
   });
 
-  setActiveSlide(0);
+  const initialIndex = Math.max(0, sliderCards.findIndex((card) => card.classList.contains("featured")));
+  setActiveSlide(initialIndex);
+  requestAnimationFrame(() => scrollToSlide(initialIndex, true));
 }
 
 const planDetails = {
