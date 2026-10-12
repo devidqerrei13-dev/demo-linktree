@@ -5,10 +5,10 @@
   --panel-soft: rgba(21, 25, 31, 0.72);
   --line: rgba(255, 255, 255, 0.28);
   --muted: rgba(255, 255, 255, 0.84);
-  --orange: #ff5a14;
-  --orange-light: #ff8a32;
+  --accent: #269fce;
+  --accent-light: #45b0dc;
   --white: #f8f8f6;
-  --focus: #ffd08a;
+  --focus: #79c9e8;
   --font-base: "Segoe UI", Roboto, Arial, sans-serif;
   --font-display: "Segoe UI", Roboto, Arial, sans-serif;
 }
@@ -56,7 +56,7 @@ body::after {
 body::after {
   z-index: 0;
   background:
-    radial-gradient(circle at 82% 35%, rgba(255, 94, 20, 0.18), transparent 18rem),
+    radial-gradient(circle at 82% 35%, rgba(38, 159, 206, 0.18), transparent 18rem),
     linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(3, 7, 10, 0.62) 44%, rgba(0, 0, 0, 0.68));
 }
 
@@ -115,7 +115,7 @@ a:hover {
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(3, 7, 10, 0.08), rgba(3, 7, 10, 0.34) 36%, rgba(3, 7, 10, 0.66) 100%),
-    radial-gradient(circle at 90% 37%, rgba(255, 90, 20, 0.18), transparent 12rem),
+    radial-gradient(circle at 90% 37%, rgba(38, 159, 206, 0.18), transparent 12rem),
     rgba(3, 7, 10, 0.22);
   border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 0;
@@ -179,7 +179,7 @@ a:hover {
 }
 
 .hero-title span {
-  color: var(--orange-light);
+  color: var(--accent-light);
 }
 
 .hero .intro {
@@ -207,7 +207,7 @@ a:hover {
 }
 
 .headline strong {
-  color: var(--orange);
+  color: var(--accent);
   font-size: clamp(3.75rem, 16vw, 5.05rem);
 }
 
@@ -234,7 +234,7 @@ a:hover {
   display: inline-block;
   vertical-align: middle;
   border-radius: 50%;
-  background: var(--orange);
+  background: var(--accent);
 }
 
 .intro {
@@ -269,9 +269,9 @@ a:hover {
 .primary-cta {
   color: #fff;
   min-height: 56px;
-  background: linear-gradient(180deg, #ff8a24 0%, #ff4d12 100%);
-  border: 1px solid #ff8c34;
-  box-shadow: 0 0 28px rgba(255, 82, 18, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  background: linear-gradient(180deg, #0877a5 0%, #08618b 100%);
+  border: 1px solid #269fce;
+  box-shadow: 0 0 28px rgba(38, 159, 206, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .icon-arrow {
@@ -330,11 +330,11 @@ a:hover {
 
 .section-title span {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--orange));
+  background: linear-gradient(90deg, transparent, var(--accent));
 }
 
 .section-title span:last-child {
-  background: linear-gradient(90deg, var(--orange), transparent);
+  background: linear-gradient(90deg, var(--accent), transparent);
 }
 
 .plans {
@@ -355,8 +355,8 @@ a:hover {
 }
 
 .plan-card.featured {
-  border-color: var(--orange);
-  box-shadow: 0 0 23px rgba(255, 90, 20, 0.45), inset 0 0 24px rgba(255, 90, 20, 0.13);
+  border-color: var(--accent);
+  box-shadow: 0 0 23px rgba(38, 159, 206, 0.45), inset 0 0 24px rgba(38, 159, 206, 0.13);
 }
 
 .badge {
@@ -366,13 +366,13 @@ a:hover {
   padding: 4px 15px;
   border-radius: 0 0 9px 9px;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, #ff7721, #f04a11);
+  background: linear-gradient(180deg, #0877a5, #08618b);
   color: #fff;
   font-family: var(--font-base);
   font-size: 0.64rem;
   font-weight: 900;
   text-transform: uppercase;
-  box-shadow: 0 0 18px rgba(255, 90, 20, 0.75);
+  box-shadow: 0 0 18px rgba(38, 159, 206, 0.75);
   white-space: nowrap;
 }
 
@@ -397,9 +397,9 @@ a:hover {
   stroke-linejoin: round;
 }
 
-.plan-icon.orange {
-  color: var(--orange);
-  border-color: rgba(255, 112, 38, 0.52);
+.plan-icon.accent {
+  color: var(--accent);
+  border-color: rgba(38, 159, 206, 0.52);
 }
 
 .plan-copy {
@@ -431,7 +431,7 @@ a:hover {
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--orange-light);
+  color: var(--accent-light);
   font-family: var(--font-base);
   font-size: 0.86rem;
   font-weight: 900;
@@ -474,11 +474,11 @@ a:hover {
   display: grid;
   place-items: center;
   border-radius: 15px;
-  border: 1px solid rgba(255, 138, 50, 0.28);
-  background: rgba(255, 138, 50, 0.09);
+  border: 1px solid rgba(69, 176, 220, 0.28);
+  background: rgba(69, 176, 220, 0.09);
   font-family: var(--font-base);
   font-size: 1.22rem;
-  color: var(--orange-light);
+  color: var(--accent-light);
 }
 
 .round-icon svg {
@@ -538,7 +538,7 @@ a:hover {
 }
 
 .contact-banner h2 span {
-  color: var(--orange-light);
+  color: var(--accent-light);
 }
 
 .contact-banner p {
@@ -656,7 +656,7 @@ footer {
   pointer-events: none;
   background:
     linear-gradient(180deg, transparent 28%, rgba(3, 7, 10, 0.16) 48%, rgba(3, 7, 10, 0.52) 100%),
-    radial-gradient(circle at 95% 90%, rgba(255, 90, 20, 0.22), transparent 11rem);
+    radial-gradient(circle at 95% 90%, rgba(38, 159, 206, 0.22), transparent 11rem);
 }
 
 .plan-content {
@@ -676,8 +676,8 @@ footer {
 .plans-slider .plan-icon {
   width: 52px;
   height: 52px;
-  color: var(--orange);
-  border-color: rgba(255, 112, 38, 0.52);
+  color: var(--accent);
+  border-color: rgba(38, 159, 206, 0.52);
 }
 
 .plans-slider .plan-copy {
@@ -703,7 +703,7 @@ footer {
   margin-top: 12px;
   display: inline-flex;
   justify-self: start;
-  color: var(--orange-light);
+  color: var(--accent-light);
 }
 
 .plan-modal {
@@ -736,7 +736,7 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 18px;
   background:
-    radial-gradient(circle at 100% 0%, rgba(255, 90, 20, 0.22), transparent 14rem),
+    radial-gradient(circle at 100% 0%, rgba(38, 159, 206, 0.22), transparent 14rem),
     linear-gradient(160deg, rgba(22, 27, 32, 0.98), rgba(5, 8, 11, 0.98));
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
@@ -767,7 +767,7 @@ footer {
 
 .modal-kicker {
   margin: 0 48px 10px 0;
-  color: var(--orange-light);
+  color: var(--accent-light);
   font-size: 0.75rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -810,8 +810,8 @@ footer {
   top: 0.42em;
   left: 2px;
   border-radius: 50%;
-  background: var(--orange);
-  box-shadow: 0 0 14px rgba(255, 90, 20, 0.68);
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(38, 159, 206, 0.68);
 }
 
 .modal-meta {
@@ -873,8 +873,8 @@ footer {
 
 .slider-dots button.active::before {
   width: 24px;
-  background: var(--orange);
-  box-shadow: 0 0 12px rgba(255, 90, 20, 0.72);
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(38, 159, 206, 0.72);
 }
 
 @media (prefers-reduced-motion: reduce) {
