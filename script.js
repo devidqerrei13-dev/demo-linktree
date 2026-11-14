@@ -111,7 +111,6 @@ const planDetails = {
       "Nuoto: esercizi a secco per la mobilità delle spalle, la stabilità del tronco e la forza nella bracciata.",
       "Corsa: uscite di fondo e ripetute dosate sulla distanza e sul ritmo che vuoi sostenere.",
       "Ciclismo: forza delle gambe e intervalli a cadenze diverse per affrontare salite e cambi di ritmo.",
-      "Jiu-jitsu: forza di presa, controllo del tronco e sforzi intermittenti per sostenere gli scambi sul tatami.",
     ],
     duration: "Formato: individuale",
     support: "Obiettivo: gara o pratica amatoriale",
