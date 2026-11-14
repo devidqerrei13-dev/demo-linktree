@@ -148,5 +148,5 @@ document.addEventListener('pointerdown', event => {
   if (!pickerGroup.contains(event.target)) toggleLanguages(false);
 });
 pickerGroup.addEventListener('focusout', event => {
-  if (!pickerGroup.contains(event.relatedTarget)) toggleLanguages(false);
+  if (event.relatedTarget && !pickerGroup.contains(event.relatedTarget)) toggleLanguages(false);
 });
