@@ -77,9 +77,9 @@ const planDetails = {
     support: "Supporto: revisione mensile",
   },
   avanzato: {
-    kicker: "Pacchetto piu scelto",
+    kicker: "Pacchetto più scelto",
     title: "Avanzato",
-    description: "Per chi vuole un percorso completo, con piu personalizzazione e monitoraggio costante.",
+    description: "Per chi vuole un percorso completo, con più personalizzazione e monitoraggio costante.",
     items: [
       "Programmazione allenamento su forza, resistenza e composizione corporea",
       "Aggiornamento periodico della scheda in base ai risultati",
@@ -94,13 +94,27 @@ const planDetails = {
     title: "Premium",
     description: "Per chi cerca massima cura, presenza e ottimizzazione del percorso fisico e mentale.",
     items: [
-      "Piano completo con allenamento, monitoraggio performance e priorita settimanali",
+      "Piano completo con allenamento, monitoraggio performance e priorità settimanali",
       "Adattamenti rapidi in base a recupero, calendario e obiettivi",
       "Check ravvicinati con feedback dettagliato e tracciamento continuo",
       "Supporto prioritario per mantenere costanza, focus e direzione",
     ],
     duration: "Durata consigliata: 12+ settimane",
     support: "Supporto: prioritario e continuativo",
+  },
+  individuale: {
+    kicker: "Preparazione sportiva",
+    title: "Lezioni 1 a 1",
+    description: "Che tu gareggi o pratichi sport per passione, partiamo dal tuo livello e dal tuo obiettivo per scegliere gli esercizi e regolare i carichi a ogni lezione.",
+    items: [
+      "Atletica: scatti brevi, balzi e lavoro di coordinazione in base alla tua specialità.",
+      "Nuoto: esercizi a secco per la mobilità delle spalle, la stabilità del tronco e la forza nella bracciata.",
+      "Corsa: uscite di fondo e ripetute dosate sulla distanza e sul ritmo che vuoi sostenere.",
+      "Ciclismo: forza delle gambe e intervalli a cadenze diverse per affrontare salite e cambi di ritmo.",
+      "Jiu-jitsu: forza di presa, controllo del tronco e sforzi intermittenti per sostenere gli scambi sul tatami.",
+    ],
+    duration: "Formato: individuale",
+    support: "Obiettivo: gara o pratica amatoriale",
   },
 };
 
@@ -122,12 +136,12 @@ function openPlanModal(planKey, trigger) {
   }
 
   activeModalTrigger = trigger;
-  modalKicker.textContent = plan.kicker;
-  modalTitle.textContent = plan.title;
-  modalDescription.textContent = plan.description;
-  modalDuration.textContent = plan.duration;
-  modalSupport.textContent = plan.support;
-  modalList.innerHTML = plan.items.map((item) => `<li>${item}</li>`).join("");
+  modalKicker.textContent = translate(plan.kicker);
+  modalTitle.textContent = translate(plan.title);
+  modalDescription.textContent = translate(plan.description);
+  modalDuration.textContent = translate(plan.duration);
+  modalSupport.textContent = translate(plan.support);
+  modalList.innerHTML = plan.items.map((item) => `<li>${translate(item)}</li>`).join("");
   modal.hidden = false;
   document.body.classList.add("modal-open");
   modalCloseButton?.focus();
@@ -164,3 +178,4 @@ if (modal) {
     }
   });
 }
+

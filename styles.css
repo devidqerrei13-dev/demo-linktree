@@ -561,11 +561,9 @@ a:hover {
 
 footer {
   padding-top: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 165px), 1fr));
+  gap: 8px;
   color: rgba(255, 255, 255, 0.72);
   font-family: var(--font-base);
   font-size: 0.82rem;
@@ -575,14 +573,28 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 44px;
+  min-height: 52px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 10px;
+  background: rgba(12,22,30,.8);
+  color: var(--white);
+  overflow-wrap: anywhere;
 }
 
-.social-link:hover {
-  color: var(--white);
+.social-link small {
+  display: block;
+  color: #bdcbd3;
+  font-size: .71rem;
+}
+
+.social-link:hover, .social-link:focus-visible {
+  border-color: var(--focus);
+  text-decoration: none;
 }
 
 .instagram,
+.tiktok,
 .whatsapp {
   width: 19px;
   height: 19px;
@@ -966,3 +978,39 @@ footer {
     height: 48px;
   }
 }
+
+.language-picker {
+  position:absolute; top:12px; right:14px; z-index:3;
+  color:#f8fbfd; text-align:left;
+}
+.language-trigger, #language-options {
+  color:inherit; border:1px solid rgba(220,241,252,.38);
+  background:linear-gradient(135deg,rgba(62,98,119,.93),rgba(33,57,72,.95));
+  backdrop-filter:blur(14px); box-shadow:0 6px 20px rgba(10,29,42,.22);
+}
+.language-trigger {
+  display:flex; align-items:center; gap:10px; min-height:44px;
+  padding:0 15px; border-radius:24px; cursor:pointer; font-weight:600;
+}
+.language-trigger svg { width:17px; height:17px; color:#c8ecff; }
+.language-trigger::after {
+  content:""; width:6px; height:6px; border:solid currentColor; border-width:0 1.5px 1.5px 0;
+  transform:translateY(-2px) rotate(45deg);
+}
+.language-trigger[aria-expanded="true"]::after { transform:translateY(2px) rotate(225deg); }
+#language-options {
+  position:absolute; top:calc(100% + 7px); right:0; width:164px;
+  padding:5px; border-radius:16px;
+}
+#language-options button {
+  display:flex; width:100%; align-items:center; gap:9px;
+  padding:8px 12px; min-height:40px; border:0; border-radius:10px;
+  background:transparent; color:inherit; font-size:15px; cursor:pointer;
+}
+#language-options .language-flag { width:20px; height:auto; flex:none; border-radius:2px; }
+#language-options button::after { margin-left:auto; }
+#language-options button:hover, #language-options button:focus-visible { background:rgba(240,248,255,.14); }
+#language-options button:focus-visible { outline-offset:-2px; }
+#language-options button[aria-current="true"] { background:rgba(202,235,255,.22); font-weight:650; }
+#language-options button[aria-current="true"]::after { content:""; width:6px; height:11px; border:solid #d4f2ff; border-width:0 2px 2px 0; transform:rotate(45deg); }
+.hero:has(.language-picker) { padding-top:68px; }
